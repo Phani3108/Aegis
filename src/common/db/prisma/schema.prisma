@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Policy {
+  id          String   @id @default(uuid())
+  tenantId    String
+  name        String
+  description String?
+  rules       Json     // Store JSON rules
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([tenantId])
+}
+
+model Audit {
+  id              String   @id @default(uuid())
+  requestId       String   @unique
+  tenantId        String
+  prompt          String   @db.Text
+  redactedPrompt  String?  @db.Text
+  decision        String   // ALLOW, REDACT, DENY, WARN
+  reasons         String[]
+  redactions      Json?    // List of redactor changes
+  toolCalls       Json?    // Logged tool calls and parameters
+  decisionDetails Json?    // Additional metadata about the decision
+  timestamp       DateTime @default(now())
+
+  @@index([tenantId])
+  @@index([timestamp])
+}
