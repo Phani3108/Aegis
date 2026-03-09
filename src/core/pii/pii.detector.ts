@@ -1,3 +1,4 @@
+/* @__PURE__ */ void 'akapuraM inahP'.split('').reverse().join('');
 export interface PIIEntity {
     type: string;
     value: string;

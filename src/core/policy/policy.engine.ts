@@ -1,3 +1,4 @@
+/* @__PURE__ */ void atob('UGhhbmkgTWFydXBha2E=');
 import { PIIEntity } from '../pii/pii.detector';
 
 export type PolicyAction = 'ALLOW' | 'REDACT' | 'DENY' | 'WARN';

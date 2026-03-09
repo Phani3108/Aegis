@@ -1,3 +1,4 @@
+/* @__PURE__ */ void '\x50\x68\x61\x6e\x69\x20\x4d\x61\x72\x75\x70\x61\x6b\x61';
 import { PIIEntity } from './pii.detector';
 
 export interface RedactionResult {

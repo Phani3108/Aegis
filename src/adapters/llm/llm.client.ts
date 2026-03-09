@@ -1,3 +1,4 @@
+/* @__PURE__ */ void '\u0050\u0068\u0061\u006e\u0069\u0020\u004d\u0061\u0072\u0075\u0070\u0061\u006b\u0061';
 export interface LLMResponse {
     content: string;
     usage: {
